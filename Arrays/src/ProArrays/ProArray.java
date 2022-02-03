@@ -35,17 +35,25 @@ public void addInt(int addNumber) {
 		ArrayLastLocation++;
 	}
 }
-public void Sirala() {
+public void sortBy(boolean disending) {
 	for(int i=0;i<=ArrayLastLocation-2;i++) {
 		for(int j=i+1;j<=ArrayLastLocation-1;j++) {
-			if(TempArray[i]<TempArray[j]) {
-				int Temp=TempArray[i];
-			TempArray[i]=TempArray[j];
-			TempArray[j]=Temp;
+			if(disending){
+				if(TempArray[i]>TempArray[j]) {
+					int Temp=TempArray[i];
+				    TempArray[i]=TempArray[j];
+				    TempArray[j]=Temp;
+				}
+			}else {
+				if(TempArray[i]<TempArray[j]) {
+					int Temp=TempArray[i];
+					TempArray[i]=TempArray[j];
+					TempArray[j]=Temp;
+					}
 			}
-			
-		}
+			}
 	}
+		
 }
 public boolean removeInt(int index) {
 	if((index<=ArrayLastLocation)&&(index>0)) {
